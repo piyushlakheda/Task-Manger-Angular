@@ -1,6 +1,6 @@
 # Task Manager Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+
 
 ## Development server
 
