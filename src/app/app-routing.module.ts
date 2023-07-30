@@ -5,9 +5,9 @@ import { EditTodoComponent } from './MyComponents/edit-todo/edit-todo.component'
 
 const routes: Routes = [
   { path: 'todos', component: TodosComponent },
-  { path: 'edit-todo/:id', component: EditTodoComponent }, // Add this route for edit-todo component
+  { path: 'edit-todo/:id', component: EditTodoComponent }, 
   { path: '', redirectTo: '/todos', pathMatch: 'full' },
-  // Add other routes as needed
+
 ];
 
 @NgModule({

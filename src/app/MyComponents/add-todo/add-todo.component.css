@@ -1,6 +1,6 @@
-/* add-todo.component.css */
 
-/* Style for the form container with glass effect */
+
+
 .cform {
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(5px);
@@ -15,18 +15,18 @@
   background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 100%);
 }
 
-/* Remove the margin-top from the form container */
+
 .form-container {
-  /* margin-top: 4%; */ /* Remove this line or set it to 0 if you don't want any margin */
+ 
 }
 
-/* Style for form labels */
+
 .cform .form-label {
   font-size: 16px;
   font-weight: bold;
 }
 
-/* Style for form input fields */
+
 .cform .form-control {
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -35,7 +35,7 @@
   font-size: 14px;
 }
 
-/* Style for form select fields */
+
 .cform .form-select {
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -45,7 +45,7 @@
   appearance: none;
 }
 
-/* Style for the Add Task button */
+
 .cform .btn-primary {
   background-color: #007bff;
   color: #fff;
