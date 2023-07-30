@@ -50,7 +50,7 @@
 
                     </tr>
                 </thead>
-          
+                <!-- Table Body with Filtered and Sorted Todos -->
                 <tbody *ngIf="filteredTodos.length > 0; else noTodosBlock">
                     <tr *ngFor="let todo of filteredTodos; index as i">
                         <td class="wrap-cell" [ngClass]="{'strike': !todo.active}">{{todo.title}}</td>
@@ -61,7 +61,8 @@
                             {{todo.priority}}</td>
 
                         <td [ngClass]="{'strike': !todo.active}">{{todo.status}}</td>
-             
+                        <!-- todos.component.html -->
+                        <!-- Add this button inside the ngFor loop to generate it for each task -->
                         <td>
                             <button class="btn btn-sm btn-primary" (click)="editTask(todo)">Edit</button>
 

@@ -9,6 +9,6 @@ export class Todo {
     history: string[];
 
     constructor() {
-        this.history = []; 
+        this.history = []; // Initialize the history log as an empty array
       }
 }

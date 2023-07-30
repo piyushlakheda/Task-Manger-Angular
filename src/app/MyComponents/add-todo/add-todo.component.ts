@@ -13,7 +13,7 @@ export class AddTodoComponent implements OnInit {
   taskDate: string;
   priority: string; 
   status: string ;
-  history: string[]; 
+  history: string[]; // Initialize the status property with 'to-do'
 
   @Output() todoAdd: EventEmitter<Todo> = new EventEmitter(); 
 
@@ -31,7 +31,7 @@ export class AddTodoComponent implements OnInit {
       taskDate: this.taskDate,
       priority: this.priority,
       status: this.status ,
-      history:this.history
+      history:this.history// Ensure the status is passed correctly
     }
 
     this.todoAdd.emit(todo);
