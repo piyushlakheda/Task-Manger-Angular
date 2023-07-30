@@ -1,0 +1,41 @@
+.container {
+
+  margin-top: 2%;
+  padding: 20px;
+  width: 100%;
+}
+
+.todo{
+  margin-top: 4%;
+  width: 100%;
+}
+.strike {
+  text-decoration: line-through;
+}
+.word-wrap {
+  word-wrap: break-word; /* Enable word wrapping in the table cell */
+  max-width: 200px; /* Set a maximum width to control the cell's width */
+}
+
+.priority-high {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+
+}
+
+.priority-medium {
+  background-color: yellow;
+  color: black;
+  padding: 5px 10px;
+
+}
+
+.priority-low {
+  background-color: green;
+  color: white;
+  padding: 5px 10px;
+
+}
+
+

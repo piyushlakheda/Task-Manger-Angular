@@ -1,0 +1,102 @@
+<div class="container">
+    <div class="alert alert-danger" *ngIf="errorMessage">
+        {{ errorMessage }}
+    </div>
+    <h1 class="text-center mb-3">Streamline Your Tasks!</h1>
+    <app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
+
+    <div class="todo">
+        <h4>Tasks List</h4>
+
+        <!-- Filter Dropdowns -->
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="statusFilter" class="form-label">Filter by Status:</label>
+                <select class="form-select" id="statusFilter" [(ngModel)]="statusFilter">
+                    <option value="">All</option>
+                    <option value="to-do">To-Do</option>
+                    <option value="in-progress">In-Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="priorityFilter" class="form-label">Filter by Priority:</label>
+                <select class="form-select" id="priorityFilter" [(ngModel)]="priorityFilter">
+                    <option value="">All</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="sortType" class="form-label">Sort by Date:</label>
+                <select class="form-select" id="sortType" [(ngModel)]="sortType" (change)="toggleSortType()">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table">
+                <!-- Table Headers -->
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Due Date</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+
+                    </tr>
+                </thead>
+                <!-- Table Body with Filtered and Sorted Todos -->
+                <tbody *ngIf="filteredTodos.length > 0; else noTodosBlock">
+                    <tr *ngFor="let todo of filteredTodos; index as i">
+                        <td class="wrap-cell" [ngClass]="{'strike': !todo.active}">{{todo.title}}</td>
+                        <td class="wrap-cell" [ngClass]="{'strike': !todo.active}">{{todo.desc}}</td>
+                        <td [ngClass]="{'strike': !todo.active}">{{todo.taskDate}}</td>
+                        <td
+                            [ngClass]="{'strike': !todo.active, 'priority-high': todo.priority === 'high', 'priority-medium': todo.priority === 'medium', 'priority-low': todo.priority === 'low'}">
+                            {{todo.priority}}</td>
+
+                        <td [ngClass]="{'strike': !todo.active}">{{todo.status}}</td>
+                        <!-- todos.component.html -->
+                        <!-- Add this button inside the ngFor loop to generate it for each task -->
+                        <td>
+                            <button class="btn btn-sm btn-primary" (click)="editTask(todo)">Edit</button>
+
+
+                        <td>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="todo{{i}}"
+                                    (click)="toggleTodo(todo)">
+                                <label class="form-check-label" for="todo{{i}}">Done</label>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-danger" (click)="deleteTodo(todo)">Delete</button>
+                        </td>
+
+                        <td>
+                            <ul>
+                                <li *ngFor="let log of todo.history">{{log}}</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <button class="btn btn-primary" (click)="exportToCSV()">Export Tasks as CSV</button>
+            </div>
+        </div>
+
+        <ng-template #noTodosBlock>
+            <div>Finally, there are no pending tasks!</div>
+
+        </ng-template>
+    </div>
+</div>

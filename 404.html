@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+<head>
+  <title>Page Not Found</title>
+</head>
+<body>
+  <script>
+    const url = window.location.href;
+    const path = url.split('/').pop();
+    window.location.replace('/Task-Management-Angular/' + path);
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+
+
+<form (ngSubmit)="onSubmit()" class="cform">
+    <div class="my-3">
+        <label for="title" class="form-label">Task-Name</label>
+        <input type="text" [(ngModel)]="title" class="form-control" name="title" id="title" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="desc" class="form-label">Task Description</label>
+        <input type="text" class="form-control" name="desc" id="desc" [(ngModel)]="desc">
+    </div>
+
+    <!-- New field: Date Selector -->
+    <div class="mb-3">
+        <label for="taskDate" class="form-label">Task Date</label>
+        <input type="date" class="form-control" name="taskDate" id="taskDate" [(ngModel)]="taskDate">
+    </div>
+
+    <!-- New field: Dropdown for Priority -->
+    <div class="mb-3">
+        <label for="priority" class="form-label">Priority</label>
+        <select class="form-select" name="priority" id="priority" [(ngModel)]="priority">
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+        </select>
+    </div>
+
+    <!-- New field: Dropdown for Status -->
+    <div class="mb-3">
+        <label for="status" class="form-label">Status</label>
+        <select class="form-select" name="status" id="status" [(ngModel)]="status">
+            <option value="to-do">To-Do</option>
+            <option value="in-progress">In-Progress</option>
+            <option value="completed">Completed</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-sm btn-primary">Add Task</button>
+</form>

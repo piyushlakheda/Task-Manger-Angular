@@ -1,0 +1,47 @@
+<!-- edit-todo.component.html -->
+<div class="container">
+    <h2>Edit Task</h2>
+    <form (ngSubmit)="onSubmit()" class="cform">
+        <div class="my-3">
+            <label for="title" class="form-label">Task-Name</label>
+            <input type="text" [(ngModel)]="todo.title" class="form-control" name="title" id="title" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">Task Description</label>
+            <input type="text" class="form-control" name="desc" id="desc" [(ngModel)]="todo.desc">
+        </div>
+
+        <!-- New field: Date Selector -->
+        <div class="mb-3">
+            <label for="taskDate" class="form-label">Task Date</label>
+            <input type="date" class="form-control" name="taskDate" id="taskDate" [(ngModel)]="todo.taskDate">
+        </div>
+
+        <!-- New field: Dropdown for Priority -->
+        <div class="mb-3">
+            <label for="priority" class="form-label">Priority</label>
+            <select class="form-select" name="priority" id="priority" [(ngModel)]="todo.priority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+        </div>
+
+        <!-- New field: Dropdown for Status -->
+        <div class="mb-3">
+            <label for="status" class="form-label">Status</label>
+            <select class="form-select" name="status" id="status" [(ngModel)]="todo.status">
+                <option value="to-do">To-Do</option>
+                <option value="in-progress">In-Progress</option>
+                <option value="completed">Completed</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <h4>History Log</h4>
+            <ul>
+              <li *ngFor="let log of todo.history">{{ log }}</li>
+            </ul>
+          </div>
+        <button type="submit" class="btn btn-sm btn-primary">Update Task</button>
+    </form>
+</div>

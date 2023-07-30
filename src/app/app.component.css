@@ -1,0 +1,48 @@
+/* Common styles for all screen sizes */
+body {
+  background-color: #d9e4f5;
+  background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
+  min-height: 100vh;
+}
+
+:host {
+  display: block;
+}
+
+/* Styles for all screen sizes */
+.container {
+  max-width: 1200px; /* Set a maximum width for the container to limit its size on large screens */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add some padding around the content inside the container */
+}
+
+.todo {
+  background-color: #ffffff; /* White background for the todo section */
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px; /* Add rounded corners to the todo section */
+}
+
+/* Styles for small screens (e.g., mobile phones) */
+@media (max-width: 576px) {
+  .container {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+}
+
+/* Styles for medium and large screens (e.g., tablets and desktops) */
+@media (min-width: 577px) {
+  .todo {
+    display: grid; /* Use CSS grid for better layout on larger screens */
+    grid-template-columns: 1fr 1fr; /* Divide the todo section into two columns */
+    gap: 20px; /* Add some gap between the columns */
+    align-items: center; /* Center the content vertically in each todo item */
+  }
+}
+
+/* Styles for large screens (e.g., desktops) */
+@media (min-width: 992px) {
+  .todo {
+    grid-template-columns: 1fr 2fr 1fr; /* Adjust the columns for even better layout on large screens */
+  }
+}
